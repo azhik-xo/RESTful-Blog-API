@@ -1,2 +1,2 @@
-node_mpdules/
-.env/
+/node_mpdules
+.env
