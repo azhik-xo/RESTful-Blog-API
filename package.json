@@ -17,9 +17,11 @@
     "start": "nodemon index.js"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "body-parser": "^2.2.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "express-validator": "^7.2.1",
     "mongoose": "^8.15.0",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.10"

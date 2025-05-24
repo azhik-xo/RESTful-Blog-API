@@ -37,7 +37,7 @@ app.use("/api/v1/auth", authRoute);
 
 // not found 
 const notFound = require("./controller/notFound");
-app.use("*",notFound);
+app.use(/.*/,notFound);
 
 // error handling middleware
 app.use(erroHandler);
