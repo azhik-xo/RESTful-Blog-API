@@ -16,5 +16,52 @@ const signupValidation = [
     .withMessage("Password is required"),
 ];
 
+const signinValidation = [
+  check("email")
+    .isEmail()
+    .withMessage("Invalid credentials")
+    .notEmpty()
+    .withMessage("Email is required"),
+  check("password").notEmpty().withMessage("Password is required"),
+];
 
-module.exports={signupValidation};
+const emailValidation = [
+  check("email")
+    .isEmail()
+    .withMessage("Invalid credentials")
+    .notEmpty()
+    .withMessage("Email is required"),
+];
+
+const verifyUserValidation = [
+  check("email")
+    .isEmail()
+    .withMessage("Invalid credentials")
+    .notEmpty()
+    .withMessage("Email is required"),
+  check("code").notEmpty().withMessage("code is required"),
+];
+
+const recoverPasswordValidation = [
+  check("email")
+    .isEmail()
+    .withMessage("Invalid credentials")
+    .notEmpty()
+    .withMessage("Email is required"),
+
+  check("code").notEmpty().withMessage("code is required"),
+
+  check("password")
+    .isLength({ min: 6 })
+    .withMessage("Password should 6 character long")
+    .notEmpty()
+    .withMessage("Password is required"),
+];
+
+module.exports = {
+  signupValidation,
+  signinValidation,
+  emailValidation,
+  verifyUserValidation,
+  recoverPasswordValidation,
+};
