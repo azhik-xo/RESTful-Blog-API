@@ -58,10 +58,24 @@ const recoverPasswordValidation = [
     .withMessage("Password is required"),
 ];
 
+const changePasswordValidation = [
+  check("oldPassword").notEmpty().withMessage("Old Password is required"),
+  check("newPassword")
+    .notEmpty()
+    .withMessage("New Password is required")
+    .isLength({ min: 6 })
+    .withMessage("Password should 6 character long"),
+];
+
+const updateProfileValidation =[
+  check("email")
+]
+
 module.exports = {
   signupValidation,
   signinValidation,
   emailValidation,
   verifyUserValidation,
   recoverPasswordValidation,
+  changePasswordValidation,
 };
